@@ -7,5 +7,8 @@ import Article from "../components/Article";
 test("displays the text 'please pass this test'", () => {
   render(<Article />);
 
+  const element = screen.queryAllByText("please pass this test");
+  screen.debug(element);
+
   expect(screen.queryByText("please pass this test")).toBeInTheDocument();
 });
